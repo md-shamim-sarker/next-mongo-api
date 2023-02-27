@@ -2,5 +2,5 @@ import connectMongo from "@/database/connection/connection";
 
 export default function handler(req, res) {
   connectMongo();
-  res.json({message: 'Check Server Console!'});
+  res.json({message: 'Snigdha, I love you.!'});
 }
