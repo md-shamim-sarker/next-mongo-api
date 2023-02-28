@@ -1,4 +1,3 @@
-import {resolve} from "styled-jsx/css";
 import Products from "../model/productsModel";
 
 // http://localhost:3000/api/products
