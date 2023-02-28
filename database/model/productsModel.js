@@ -7,7 +7,7 @@ const productSchema = new Schema(
     }
 );
 
-const Products = models.user || model('user', productSchema);
+const Products = models.product || model('product', productSchema);
 
 export default Products;
 
