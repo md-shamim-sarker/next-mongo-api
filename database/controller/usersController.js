@@ -32,7 +32,6 @@ export const getUserByEmail = async (req, res) => {
     }
 };
 
-
 // http://localhost:3000/api/users
 export const postUser = async (req, res) => {
     try {
