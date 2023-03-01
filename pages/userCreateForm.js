@@ -14,7 +14,7 @@ const userCreateForm = () => {
     const mutation = useMutation(() => {
         return axios({
             method: "POST",
-            url: "http://localhost:3000/api/users",
+            url: "/api/users",
             data: user
         });
     }, {

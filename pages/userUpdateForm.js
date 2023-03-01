@@ -14,7 +14,7 @@ const userCreateForm = () => {
     const mutation = useMutation(() => {
         return axios({
             method: "PUT",
-            url: `http://localhost:3000/api/users/?userId=${router.query._id}`,
+            url: `/api/users/?userId=${router.query._id}`,
             data: user
         });
     }, {

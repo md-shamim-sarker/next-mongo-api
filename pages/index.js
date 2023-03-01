@@ -8,7 +8,7 @@ const Home = () => {
   const router = useRouter();
   const query = useQuery(
     'users',
-    () => axios("http://localhost:3000/api/users"),
+    () => axios("/api/users"),
     {refetchInterval: 1000}
   );
 
@@ -23,7 +23,7 @@ const Home = () => {
   const users = query.data.data;
 
   const onDelete = (_id) => {
-    return axios.delete(`http://localhost:3000/api/users/?userId=${_id}`);
+    return axios.delete(`/api/users/?userId=${_id}`);
   };
 
   return (
