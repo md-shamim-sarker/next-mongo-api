@@ -1,64 +1,22 @@
-import UsersTable from "@/components/usersTable";
-import axios from "axios";
-import Link from "next/link";
-import {useRouter} from "next/router";
-import {useQuery} from "react-query";
+import Login from '@/components/login';
+import {AppContext} from '@/contexts/UserContext';
+import React, {useContext} from 'react';
+import Costs from './costs';
+import Reports from './reports';
 
 const Home = () => {
-  const router = useRouter();
-  const query = useQuery(
-    'users',
-    () => axios("/api/users"),
-    {refetchInterval: 1000}
-  );
+  const {items} = useContext(AppContext);
 
-  if(query.isLoading) {
-    return <h1>Loading....</h1>;
+  if(items === undefined) {
+    return <Login></Login>;
+  }
+  if(items?.userName === "shamim" || items?.userName === "shahin") {
+    return <Reports></Reports>;
   }
 
-  if(query.isError) {
-    return <h1>Unable to fetch data.</h1>;
+  if(items?.userName === "sujon") {
+    return <Costs></Costs>;
   }
-
-  const users = query.data.data;
-
-  const onDelete = (_id) => {
-    return axios.delete(`/api/users/?userId=${_id}`);
-  };
-
-  return (
-    <div>
-      <h2 className="text-4xl text-center py-10 font-bold">React Query</h2>
-      <div className="overflow-x-auto">
-        <div className="w-1/2 mx-auto py-4">
-          <Link href={'./userCreateForm'} className="btn btn-secondary btn-sm">Add New +</Link>
-        </div>
-        <table className="table table-zebra w-1/2 mx-auto">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>SL</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Update</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              users.map((user, index) => <UsersTable
-                key={user._id}
-                user={user}
-                index={index}
-                router={router}
-                onDelete={onDelete}
-              ></UsersTable>)
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
 };
 
 export default Home;

@@ -1,18 +1,18 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 mongoose.set('strictQuery', true);
 
-const connectMongo = async () => {
+const ConnectMongo = async () => {
     try {
         const {connection} = await mongoose.connect(process.env.MONGO_URI);
-        if(connection.readyState === 1) {
+        if(connection.readyState) {
             console.log('Database Connected!');
         } else {
             console.log('Database Not Connected!');
         }
     } catch(error) {
-        console.log(error.message);
+        console.log(error);
     }
 };
 
-export default connectMongo;
+export default ConnectMongo;

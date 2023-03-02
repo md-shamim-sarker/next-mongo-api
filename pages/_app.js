@@ -1,12 +1,12 @@
+import Header from '@/components/common/header';
+import UserContext from '@/contexts/UserContext';
 import '@/styles/globals.css';
-import {QueryClient, QueryClientProvider} from 'react-query';
-
-export const queryClient = new QueryClient();
 
 export default function App({Component, pageProps}) {
   return (
-    <QueryClientProvider client={queryClient}>
+    <UserContext>
+      <Header></Header>
       <Component {...pageProps} />
-    </QueryClientProvider>
+    </UserContext>
   );
 }

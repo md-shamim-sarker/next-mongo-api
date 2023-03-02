@@ -1,6 +1,6 @@
-import connectMongo from "@/database/connection/connection";
+import ConnectMongo from "@/database/connection/connectMongo";
 
 export default function handler(req, res) {
-  connectMongo();
+  ConnectMongo();
   res.json({message: 'Snigdha, I love you.!'});
 }
