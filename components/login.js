@@ -20,8 +20,8 @@ const Login = () => {
     };
 
     return (
-        <div className='w-full h-[90vh] flex justify-center items-center transition-all'>
-            <form onSubmit={onSubmitHandler} className="flex flex-col w-11/12 md:w-1/5 gap-y-3 bg-blue-300 p-5 rounded-xl">
+        <div className='w-full h-[100vh] flex justify-center items-center transition-all'>
+            <form onSubmit={onSubmitHandler} className="flex flex-col w-11/12 md:w-1/5 gap-y-3 bg-blue-700 bg-opacity-40 p-5 rounded-xl">
                 <h2 className='text-3xl font-bold text-center'>Login Form</h2>
                 <input type="text" name="userName" className='px-2 py-1 rounded-md font-bold' placeholder='username' />
                 <input type="password" name="password" className='px-2 py-1 rounded-md font-bold' placeholder='password' />

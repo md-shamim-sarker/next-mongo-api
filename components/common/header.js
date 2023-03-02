@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     return (
-        <div className='flex justify-between bg-blue-200 px-2 md:px-3 lg:px-10 py-2 items-center transition-all'>
+        <div className='flex justify-between bg-blue-200 px-2 md:px-3 lg:px-10 py-2 items-center transition-all fixed top-0 w-full'>
             <div>
                 <h2 className='text-2xl font-extrabold'>LOGO</h2>
             </div>
@@ -23,9 +23,9 @@ const Header = () => {
                 {
                     items &&
                     <>
-                        <Link href={"/costs"}>Cost</Link>
-                        <Link href={"/paids"}>Paid</Link>
-                        <Link href={"/reports"}>Report</Link>
+                        <Link href={"/costs"} className="hover:text-blue-600 transition-all">Cost</Link>
+                        <Link href={"/paids"} className="hover:text-blue-600 transition-all">Payment</Link>
+                        <Link href={"/reports"} className="hover:text-blue-600 transition-all">Report</Link>
                     </>
                 }
 

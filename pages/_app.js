@@ -5,8 +5,10 @@ import '@/styles/globals.css';
 export default function App({Component, pageProps}) {
   return (
     <UserContext>
-      <Header></Header>
-      <Component {...pageProps} />
+      <div className='bg-slate-100'>
+        <Header></Header>
+        <Component {...pageProps} />
+      </div>
     </UserContext>
   );
 }

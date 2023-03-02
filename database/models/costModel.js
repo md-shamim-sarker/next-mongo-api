@@ -4,7 +4,7 @@ const costSchema = new Schema({
     user: String,
     date: String,
     productName: String,
-    price: String
+    price: Number
 });
 
 const Costs = models.cost || model('cost', costSchema);
